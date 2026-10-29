@@ -22,9 +22,9 @@
 <body>
     <div class="container mx-auto px-6 py-6">
         <div>
-            <legend class="text-2xl font-bold text-gray-900">選擇角色</legend>
+            <legend class="text-2xl font-bold text-red-900">選擇角色</legend>
 
-            <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 md:grid-cols-3 gap-x-4" id="characters">
+            <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 md:grid-cols-3 gap-x-4" id="characters">
             </div>
         </div>
     </div>
@@ -38,6 +38,9 @@
     
     
     }
+    const character_selecter = $("#characters")
+    character_selecter.append(`
+      <label class="selecter bg-white border rounded-lg shadow-lg p-6 flex cursor-pointer focus:outline-none focus:ring-red-500 focus:ring-offset-2 focus:ring-2" character-id="${id}"></label>`);
     </script>
 </body>
 </html>

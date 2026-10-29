@@ -13,9 +13,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
 <body>
+    <div class="container mx-auto px-6 py-6">
+        <div>
+            <legend class="text-2xl font-bold text-gray-900">選擇角色</legend>
+
+            <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 md:grid-cols-3 gap-x-4" id="characters">
+            </div>
+        </div>
+    </div>
+    <script>
+        const character =  {
+            1:{name: "尔芙"},
+            2:{name: "睿司"},
+            3:{name: "吾特"},
+            4:{name: "安梧"},
+            5:{name: "伍艾菲"}
     
+    
+    }
+    </script>
 </body>
 </html>

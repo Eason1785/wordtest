@@ -44,9 +44,10 @@
         let name = value.name;
     character_selecter.append(`
       <label class="selecter bg-white border rounded-lg shadow-lg p-6 flex cursor-pointer focus:outline-none focus:ring-red-500 focus:ring-offset-2 focus:ring-2" character-id="${id}">
+        <input type="radio">
         <div class="flex-1 flex">
             <div class="flex flex-col">
-                <span class="block text-lg font-bold text-gray-900 ml-4 mb-4">${name}</span>
+                <span class="block text-xl font-bold text-gray-900 ml-4 mb-4">${name}</span>
                 <img src="character-photo/${id}.jpeg" alt= "角色圖片">
             </div>
       </div>
@@ -57,6 +58,24 @@
 
 
     };
+    let selectcharacter = function(id) {
+        // prompt for password
+        let character_name = character[id].name
+        let character = character[id]; 
+        character.id = id;
+        let isConfirmed = confirm(`請問要選擇角色：${character.name} 嗎？`);
+
+// 如果使用者按了「取消」
+        if (!isConfirmed) {
+            return;  }
+        window.localStorage.setItem("character", JSON.stringify(character));
+        window.location.href = "bench.html?" + Date.now();   }
+
+    $(".selecter").click(function() {
+        let id = $(this).attr("character-id");
+        selectCharacter(id);
+        return false;
+        });
     </script>
     
 </body>

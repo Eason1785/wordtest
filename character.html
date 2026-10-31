@@ -65,7 +65,7 @@
         character.id = id;
         let isConfirmed = confirm(`請問要選擇角色：${character.name} 嗎？`);
 
-// 如果使用者按了「取消」
+
         if (!isConfirmed) {
             return;  }
         window.localStorage.setItem("character", JSON.stringify(character));
@@ -73,7 +73,7 @@
 
     $(".selecter").click(function() {
         let id = $(this).attr("character-id");
-        selectCharacter(id);
+        selectcharacter(id);
         return false;
         });
     </script>

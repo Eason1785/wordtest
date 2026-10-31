@@ -44,7 +44,12 @@
         let name = value.name;
     character_selecter.append(`
       <label class="selecter bg-white border rounded-lg shadow-lg p-6 flex cursor-pointer focus:outline-none focus:ring-red-500 focus:ring-offset-2 focus:ring-2" character-id="${id}">
-     
+        <div class="flex-1 flex">
+            <div class="flex flex-col">
+                <span class="block text-lg font-bold text-gray-900 ml-4 mb-4">${name}</span>
+                <img source="character-photo/${id}.jpeg/">
+            </div>
+      </div>
         
         
         

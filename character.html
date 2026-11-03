@@ -28,6 +28,17 @@
             </div>
         </div>
     </div>
+
+    <div id="confirm_box" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden ">
+      <div class="bg-white rounded-lg p-6 w-full max-w-sm shadow-lg mx-6 ">
+        <h3 id="confirm_message" class="text-lg font-bold mb4"></h3>
+        <div class="flex justify-end space-x-3">
+          <button id="confirm_ok" class="bg-green-400 rounded-lg px-4 py-2 cursor-pointer hover:bg-green-500">確認</button>
+          <button id="confirm_cancel" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 cursor-pointer">取消</button>
+        </div>
+      </div >
+    </div>
+    
     <script>
         const character =  {
             1:{name: "尔芙"},
@@ -44,7 +55,7 @@
         let name = value.name;
     character_selecter.append(`
       <label class="selecter bg-white border rounded-lg shadow-lg p-6 flex cursor-pointer focus:outline-none focus:ring-red-500 focus:ring-offset-2 focus:ring-2" character-id="${id}">
-        <input type="radio">
+        <input type="radio" name="choose_character">
         <div class="flex-1 flex">
             <div class="flex flex-col">
                 <span class="block text-xl font-bold text-gray-900 ml-4 mb-4">${name}</span>
@@ -58,24 +69,37 @@
 
 
     };
+    let selected_id = null ;
     let selectcharacter = function(id) {
         // prompt for password
         let character_name = character[id].name
-        let character = character[id]; 
+        let character_detail = character[id]; 
         character.id = id;
-        let isConfirmed = confirm(`請問要選擇角色：${character.name} 嗎？`);
+        selected_id = id 
 
-
-        if (!isConfirmed) {
-            return;  }
-        window.localStorage.setItem("character", JSON.stringify(character));
-        window.location.href = "bench.html?" + Date.now();   }
+        $("#confirm_message").text(`你的角色為${character_name}`);
+        $("#confirm_box").removeClass("hidden");
+ }
 
     $(".selecter").click(function() {
         let id = $(this).attr("character-id");
         selectcharacter(id);
         return false;
         });
+    $("#confirm_ok").click(function(){
+      if(selected_id !== null){
+        let selected_character = character[selected_id];
+        window.localStorage.setItem("character" , JSON.stringify(selected_character));
+        window.location.href = "bench.html?" + Date.now();
+      }
+
+      
+    });
+    $("#confirm_cancel").click(function(){
+      $("#confirm_box").addClass("hidden");
+      selected_id = null
+     
+    });
     </script>
     
 </body>

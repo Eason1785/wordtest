@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello </title>
+
+    <!-- 預先連接到字體網，減少加載時間 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- 連接css 檔案 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
 <body>
+    <div class="sticky top-0 px-6 py-6 bg-white shadow-lg">
+        <!-- Here should be the top box -->
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- it splits the box into two sides  -->
+            <div class="flex-1 min-w-0 border-2 border-red-500" >
+                <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate" id="character_name">
+                  Here should be name 
+                </h2>
+            </div>
+            <div class="flex md:mt-0 md:ml-4 mt-5 border-green-500 border-2">
+              <span class="md:ml-3 space-x-2 border-blue-500 border-2" id="download-script">Here will be the script 
+                </span>
+                
+            </div>
+        </div>
+    </div>
     
 </body>
+<script>
+    if(!window.localStorage.getItem('character')){
+        window.location.href = 'character.html?' + Date.now()
+    };
+    $(() => {
+        let character = JSON.parse(window.localStorage.getItem('character'));
+        let name = character.name;
+        $('#character_name').text(name);
+
+
+    })
+
+</script>
 </html>

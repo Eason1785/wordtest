@@ -25,13 +25,16 @@
         <div class="container mx-auto flex justify-between items-center">
             <!-- it splits the box into two sides  -->
             <div class="flex-1 min-w-0 border-2 border-red-500" >
-                <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate" id="character_name">
+                <h2 class="text-3xl font-bold leading-8 text-gray-900 sm:truncate" id="character_name">
                   Here should be name 
                 </h2>
             </div>
-            <div class="flex md:mt-0 md:ml-4 mt-5 border-green-500 border-2">
-              <span class="md:ml-3 space-x-2 border-blue-500 border-2" id="download-script">Here will be the script 
-                </span>
+            <div class="flex mt-0 ml-4 border-2 border-green-500">
+                <button type="button" id="rechoose_char"
+                    class="inline-flex items-center px-4 py-2 rounded-md shadow-sm text-sm font-bold text-white bg-neutral-600 hover:bg-neutral-700 ">
+                    重選角色
+                </button>
+            </div>
                 
             </div>
         </div>
@@ -46,6 +49,13 @@
         let character = JSON.parse(window.localStorage.getItem('character'));
         let name = character.name;
         $('#character_name').text(name);
+
+        $('#rechoose_char').click(function () {
+
+            window.localStorage.removeItem('character')
+
+            // 跳轉回到選角頁面（帶上時間戳記防止快取）
+            window.location.href = 'character.html?' + Date.now();});
 
 
     })

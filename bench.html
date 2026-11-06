@@ -24,12 +24,12 @@
         <!-- Here should be the top box -->
         <div class="container mx-auto flex justify-between items-center">
             <!-- it splits the box into two sides  -->
-            <div class="flex-1 min-w-0 border-2 border-red-500" >
+            <div class="flex-1 min-w-0 " >
                 <h2 class="text-3xl font-bold leading-8 text-gray-900 sm:truncate" id="character_name">
                   Here should be name 
                 </h2>
             </div>
-            <div class="flex mt-0 ml-4 border-2 border-green-500">
+            <div class="flex mt-0 ml-4 ">
                 <button type="button" id="rechoose_char"
                     class="inline-flex items-center px-4 py-2 rounded-md shadow-sm text-sm font-bold text-white bg-neutral-800 hover:bg-neutral-900 ">
                     重選角色
@@ -39,30 +39,30 @@
             </div>
         </div>
     </div>
-    <div class="max-w-3xl mx-auto my-8 px-4 sm:px-6">
-    <!-- 主卡片容器 -->
-        <div class="bg-white rounded-xl shadow-lg border border-neutral-200 p-6 sm:p-10 space-y-8">
+    <div class="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto my-8 lg:my-12 px-4 sm:px-8">
+        <!-- 主卡片容器：內距在電腦上變得更大 (lg:p-14) -->
+        <div class="bg-white rounded-2xl shadow-xl border border-neutral-200 p-6 sm:p-10 lg:p-14 space-y-8 lg:space-y-10">
             
-            <!-- 1. 遊戲須知 (紅色幼字/小字) -->
-            <div class="bg-red-50 rounded-lg p-4 border border-red-100">
-                <p class="text-xs font-light text-red-600 leading-relaxed">
+            <!-- 1. 遊戲須知 (紅色幼字/小字，在大螢幕上稍微放大成 text-sm) -->
+            <div class="bg-red-50 rounded-xl p-4 lg:p-5 border border-red-100">
+                <p class="text-xs sm:text-sm lg:text-base font-light text-red-600 leading-relaxed">
                     <span class="font-medium">【遊戲須知】</span>
                     遊戲過程中請勿直接念劇本，扮演時要符合角色性格，劇本沒有寫的內容，在不違背人物設定的基礎上，可以自行補充。注：角色年齡皆是“虛歲”，以“出生年”為1歲。
                 </p>
             </div>
 
             <!-- 2. 故事背景標題與日期 (置中) -->
-            <div class="text-center space-y-2 border-b border-neutral-100 pb-6">
-                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-wide">
+            <div class="text-center space-y-3 border-b border-neutral-100 pb-6 lg:pb-8">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-wide">
                     故事背景
                 </h1>
-                <p class="text-sm sm:text-base font-medium text-neutral-500">
+                <p class="text-base sm:text-lg lg:text-xl font-medium text-neutral-500">
                     1914年（民國三年）9月20日
                 </p>
             </div>
 
-            <!-- 3. 故事背景內文 -->
-            <div class="text-gray-700 leading-relaxed text-sm sm:text-base space-y-4">
+            <!-- 3. 故事背景內文：在大螢幕上自動放大字體 (text-lg / text-xl)，行高加寬更易讀 -->
+            <div class="text-gray-700 leading-loose text-base sm:text-lg lg:text-xl space-y-6">
                 <p>
                     在江蘇與浙江的兩省交界處，有一座西塘古鎮，地勢平坦，周圍河流遍布，水路交錯，生長著許多古樹，蔚然成森——往嘉興的方向走去，偶爾能看到一些不高的丘陵，隱於林中。數十年前，有一塊天降隕石落古鎮西南在一處茂林裏，衝擊成窪，附近的水流注入後，形成湖面——傳說此乃月中蟾宮的司時之石，誤落凡間，因此得名“月落窪”。
                 </p>
@@ -72,9 +72,9 @@
             </div>
 
             <!-- 4. 按此進入劇本按鈕 -->
-            <div class="pt-4 text-center">
+            <div class="pt-4 lg:pt-6 text-center">
                 <button type="button" id="btn-enter-game"
-                    class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-neutral-800 hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200">
+                    class="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 border border-transparent rounded-xl shadow-lg text-lg font-medium text-white bg-neutral-800 hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200">
                     按此進入劇本 →
                 </button>
             </div>
